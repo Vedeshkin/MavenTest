@@ -12,7 +12,7 @@ public class VKResponse implements Serializable {
 @SerializedName("response")
     private ArrayList<UserInfo> userInfo;
 
-    public ArrayList<UserInfo> getUserInfo() {
+    public ArrayList<UserInfo> getUsers() {
         return userInfo;
     }
 }
