@@ -18,7 +18,7 @@ public class Main {
     private static final Logger log = Logger.getLogger(Main.class);
     static private Gson gson;
     private int requestCount;
-     private URL url ;
+    private URL url ;
 
     public static void main(String[] args) throws Exception {
         Main app = new Main();
@@ -39,7 +39,7 @@ public class Main {
 
     public void start() {
         try {
-            url = new URL("https://api.vk.com/method/users.get?user_ids=id9668836,&fields=online");
+            url = new URL("https://api.vk.com/method/users.get?user_ids=id9668836&fields=online");
         }
         catch (MalformedURLException exception){
             log.error(exception.getMessage(),exception);
@@ -50,18 +50,20 @@ public class Main {
         while (true) {
 
 
-            log.info("Attepmt to process request no." + requestCount);
+            log.info("Attempt to process request no. " + requestCount);
             for (UserInfo u : getResponse(url).getUsers()){
-                log.info("Parsed next entity:" + u);
+
             sm.compareStatus(u);
+            log.info(u + " Has been successfully parsed.");
         }
             try {
-                Thread.sleep(2000);
+                Thread.sleep(5000);
             } catch (InterruptedException exception) {
                 log.trace(exception.getMessage(), exception);
             }
+
+            log.info("Request no. " + requestCount + " has been processed");
             requestCount++;
-            log.info("Request no" + requestCount + " has been processed");
         }
 
     }

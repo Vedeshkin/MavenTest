@@ -25,6 +25,11 @@ public class UserInfo {
         return uid;
     }
 
+    public String getFullName()
+    {
+        return firstName + " " + lastName;
+    }
+
     @Override
     public String toString() {
         return "UserInfo{" +

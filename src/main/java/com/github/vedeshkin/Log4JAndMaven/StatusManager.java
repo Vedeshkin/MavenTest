@@ -49,7 +49,7 @@ public class StatusManager {
         return dataStorage.get(uid).get(0).getOnline();
     }
 
-    private List getStatusList(int uid) {
+    public List getStatusList(int uid) {
         return dataStorage.get(uid);
     }
 
