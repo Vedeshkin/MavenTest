@@ -39,7 +39,7 @@ public class Main {
 
     public void start() {
         try {
-            url = new URL("https://api.vk.com/method/users.get?user_ids=id9668836&fields=online");
+            url = new URL("https://api.vk.com/method/users.get?user_ids=id9668836,olyousya&fields=online");
         }
         catch (MalformedURLException exception){
             log.error(exception.getMessage(),exception);
