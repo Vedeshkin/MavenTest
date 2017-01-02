@@ -47,6 +47,8 @@ public class Main {
         log.info(url);
         StatusManager sm = new StatusManager();
         sm.init(getResponse(url).getUsers());
+        ReportManager rm = new ReportManager();
+        rm.addReport(new Report(sm));
         while (true) {
 
 

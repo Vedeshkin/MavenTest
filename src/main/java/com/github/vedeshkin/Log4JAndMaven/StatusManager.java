@@ -8,6 +8,7 @@ import java.util.*;
 public class StatusManager {
     private static final org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger(StatusManager.class);
     private Map<Integer, List<Status>> dataStorage;
+    private List<UserInfo> users;
 
     public StatusManager() {
         dataStorage = new HashMap<>();
@@ -21,6 +22,7 @@ public class StatusManager {
             log.error("Unable to init StatusManager");
             System.exit(0);
         }
+        users = user;
         for (UserInfo u : user) {
             List<Status> statuses = new LinkedList<>();
             statuses.add(new Status(u.getOnline()));
@@ -52,5 +54,10 @@ public class StatusManager {
     public List getStatusList(int uid) {
         return dataStorage.get(uid);
     }
+    public List getUserList()
+    {
+        return users;
+    }
+
 
 }

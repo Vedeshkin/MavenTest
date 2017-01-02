@@ -18,4 +18,13 @@ public class Status {
     public int getOnline() {
         return isOnline;
     }
+
+    public String getStatus()
+    {
+        return isOnline == 1 ? "online" : "offline";
+
+    }
+    public Date getEntered(){
+        return entered;
+    }
 }

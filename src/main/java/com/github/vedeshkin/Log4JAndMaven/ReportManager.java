@@ -18,7 +18,7 @@ public class ReportManager {
     }
     public void addReport(Report report)
     {
-
+        timer.schedule(report,60*1000,60*1000);
     }
 
 }
